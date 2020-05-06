@@ -1,4 +1,4 @@
-$headerColor: #666666;
+$headerColor: rgba(0, 0, 0, 0.5);
 $textColor: #ffffff;
 
 .header {
@@ -8,11 +8,10 @@ $textColor: #ffffff;
   height: 80px;
   display: flex;
   justify-content: center;
-
+ 
   &__menu {
     display: flex;
-    align-items: center;  
-      
+    align-items: center;
   }
 
   &__menu-item {
@@ -22,6 +21,9 @@ $textColor: #ffffff;
     text-align: center;
     text-decoration: none;
     align-items: center;
+    &:hover {
+      color: greenyellow;
+    }
 
     & + & {
       margin-left: 25px;
@@ -36,7 +38,7 @@ $textColor: #ffffff;
       cursor: pointer;
       padding: 0;
       outline: none;
-
+      
       &::before {
         content: '';
         background: white;
@@ -51,13 +53,19 @@ $textColor: #ffffff;
     &--with-arrow {
       display: flex;
       align-items: center;
-
+      
       &::after {
         content: '>';
         transform: rotate(90deg);
         color: white;  
+        margin-left: 10px; 
+      }
+
+      &:hover::after {
+        content: '>';
+        transform: rotate(90deg);
+        color: greenyellow;  
         margin-left: 10px;
-        
       }
     }
   }
