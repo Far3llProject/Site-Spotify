@@ -1,6 +1,8 @@
 @import "./components/header";
 @import "./components/container";
 @import "./components/footer";
+@import "./components/screens_sizes/medium";
+@import "./components/menu";
 
 * {
   font-family: Helvetica, Arial, sans-serif;
@@ -31,7 +33,7 @@ body {
   justify-content: center;
   background: #F2B858;
   background-image: url(../img/rejon_Supergirl.svg);
-  background-position: right;
+  background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   flex-direction: column;
@@ -42,8 +44,9 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 700px;
+    height: 600px;
     width: 100%;
+
     h1 {
       font-size: 80px;
       text-align: center;
@@ -105,7 +108,7 @@ body {
     border: 2px;
     border-style: solid;
     border-color: #616467;
-    padding: 20px 50px 20px 50px;
+    padding: 16px 50px 16px 50px;
     outline: none;
     cursor: pointer;
     
@@ -115,7 +118,7 @@ body {
     }
   }
 }
-// TODO na view de manor tamanho mudar a exibição para 2 albums
+
 .albums {
   display: flex;
   justify-content: center;
@@ -131,7 +134,6 @@ body {
     background: black;
     margin: 5px;
     display: block;
-    
 
     img {
       width: 300px;
@@ -188,6 +190,32 @@ body {
       cursor: pointer;
       opacity: 1;
     }
-     
+  }
+}
+
+.albums-sm {
+  display: none;
+}
+
+
+@media (max-width: 715px){
+
+  .container {
+    width: calc(100% - 80px);
+  }
+
+  .web-player {
+
+    h1 {
+      font-size: 25px;
+    }
+  }
+  
+  .albums {
+    display: none;
+  }
+
+  .albums-sm {
+    display: flex;
   }
 }

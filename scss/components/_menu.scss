@@ -1,0 +1,64 @@
+.header__menu-hidden {
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  display: flex;
+  width: 40%;
+  height: 105vh;
+  background: $headerColorSmall;
+  right: -400px;
+  transition: 0.3s;
+
+  ul {
+    position: relative;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    
+    li {
+      display: flex;
+      list-style: none;
+      padding-top: 40px;
+
+      a {
+        display: block;
+        font-weight: bold;
+        text-decoration: none;
+        color: rgb(192, 9, 9);
+        font-size: 30px;
+      }
+    }
+  } 
+
+  &-brand {
+    position: absolute;
+    bottom: 55px;
+
+    img {
+      width: 100px;
+      display: block;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 600px;
+    width: 200%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  &-div {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 35px;
+      width: 20px;
+      height: 2px;
+      background: white;
+    }
+  }
+}

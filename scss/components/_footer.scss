@@ -1,4 +1,9 @@
-// TODO colocar em coluna em tamanho menor
+.footer__container {
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 122px);
+  max-width: 1200px;
+}
 
 .footer {
   width: 100%;
@@ -61,7 +66,7 @@
         &-item {
           position: relative;
 
-          &-image{
+          &-image {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -100,10 +105,4 @@
     }
 
   } 
-}
-
-@media  (max-width: 1000px) {
-  .footer__menu-link-socials {
-    display: block;
-  }
 }
