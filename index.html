@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="scss/style.css">
   <title>Spotify</title>
+  <script src="./js/active.js" ></script>
 </head>
 
-<header class="header">
+<header id="header" class="header">
   <div class="container">
     <a href="#" class="header__brand"><img src="img/Spotify_Logo_.png"></a>
     <nav class="header__menu">
@@ -17,10 +19,22 @@
         <div class="header__menu-item header__menu-item--with-arrow">Perfil</div>
       </button>
     </nav>
-  </div>
+    <div class="header__toggle" onclick="toggle()"></div>
+    </div>
+    <div class="header__menu-hidden">
+      <ul>
+        <li><a href="#">Premium</a></li>
+        <li><a href="#">Ajuda</a></li>
+        <li><a href="#">baixar</a></li>
+        <li><a href="#">conta</a></li>
+        <li><a href="#">sair</a></li>
+        <li><a class="header__menu-hidden-brand" href="#">
+          <img src="img/Spotify_Logo_.png"></a></li>
+      </ul>
+    </div>
 </header>
 
-<body> 
+<body id="body"> 
   <div class="container">
     <div class="covid">
       <section>
@@ -110,7 +124,7 @@
       <a href="#" class="footer__brand"><img src="img/Spotify_Logo_.png"></a>
       <div class="footer__menu-link">
         <ul>
-          <li><p>EMPRESA</p></li>
+          <p>EMPRESA</p>
           <li><a href="#">Sobre</a></li>
           <li><a href="#">Empregos</a></li>
           <li><a href="#">For the Record</a></li>
@@ -118,7 +132,7 @@
       </div>
       <div class="footer__menu-link">
         <ul>
-          <li><p>COMUNIDADE</p></li>
+          <p>COMUNIDADE</p>
           <li><a href="#">Para Artistas</a></li>
           <li><a href="#">Desenvolvedores</a></li>
           <li><a href="#">Marcas</a></li>
@@ -128,19 +142,37 @@
       </div>
       <div class="footer__menu-link">
         <ul>
-          <li><p>LINKS ÚTEIS</p></li>
+          <p>LINKS ÚTEIS</p>
           <li><a href="#">Ajuda</a></li>
           <li><a href="#">Player da Web</a></li>
           <li><a href="#">Aplicativo móvel grátis</a></li>
         </ul>    
       </div>
-      <div class="footer__menu-link">
-        <a href="#">instagram</a>
-        <a href="#">twitter</a>
-        <a href="#">facebook</a>
-      </div>
+      
+      <nav id="socials" class="footer__menu-link-socials">
+
+        <a class="footer__menu-link-socials-item" href="#">
+          <div class="footer__menu-link-socials-item-image">
+            <img src="./img/instagram.svg">
+          </div>
+        </a>
+
+        <a class="footer__menu-link-socials-item" href="#">
+          <div class="footer__menu-link-socials-item-image">
+            <img src="./img/twitter.svg">
+          </div>
+        </a>
+        
+        <a class="footer__menu-link-socials-item" href="#">
+          <div class="footer__menu-link-socials-item-image">
+            <img src="./img/facebook.svg">
+          </div>
+        </a>
+        
+      </nav>
     </nav>
    
   </div>
 </footer>
+
 </html>

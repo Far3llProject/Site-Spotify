@@ -1,14 +1,71 @@
+// TODO terminar de estilizar o menu lateral
 $headerColor: rgba(0, 0, 0, 0.5);
 $textColor: #ffffff;
+$headerColorSmall: black;
 
 .header {
+  position: relative;
   background-color: $headerColor;
   position: fixed;
   width: 100%;
   height: 80px;
   display: flex;
   justify-content: center;
- 
+  z-index: 2;
+
+  &__toggle {
+    display: none;
+  }
+  
+  &__menu-hidden {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    display: flex;
+    width: 40%;
+    height: 100vh;
+    background: $headerColorSmall;
+    right: -400px;
+    transition: 0.3s;
+
+    ul{
+      position: relative;
+      padding-top: 30px;
+      display: flex;
+      flex-direction: column;
+      
+      li {
+        display: flex;
+        list-style: none;
+        padding-top: 40px;
+        a {
+          display: block;
+          font-weight: bold;
+          text-decoration: none;
+          color: white;
+          font-size: 30px;
+        }
+      }
+    } 
+    &-brand {
+      position: absolute;
+      bottom: 30px;
+      img{
+        width: 100px;
+        display: block;
+      }
+      
+    }
+    &::before {
+      position: absolute;
+      left: 600px;
+      content: '';
+      width: 200%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+
   &__menu {
     display: flex;
     align-items: center;
@@ -94,4 +151,111 @@ $textColor: #ffffff;
     }
   }
 }
+
+@media  (max-width: 1000px) {
+  .header {
+    background: $headerColorSmall;
+    &__menu {
+      &-item {
+        display: none;
+      }
+    }
+
+    &__toggle {
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        z-index: 1;
+        transition: 0.5s;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 4px;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        z-index: 1;
+        box-shadow: 0 10px 0 #fff;
+        transition: 0.5s;
+      }
+    }
+  
+    &__active{
+       
+      .header__toggle::before {
+        top: 14px;
+        transform: rotate(-45deg);
+        box-shadow: 0 0 0 #fff;
+      }
+
+      .header__toggle::after {
+        top: 14px;
+        transform: rotate(45deg);
+      }
+
+      .header__menu-hidden {
+        opacity: 1;
+        z-index: -1;
+        position: absolute;
+        display: flex;
+        width: 40%;
+        height: 100vh;
+        background: $headerColorSmall;
+        right: -1px;
+        transition: 0.5s;
+    
+        ul{
+          position: relative;
+          padding-top: 30px;
+          display: flex;
+          flex-direction: column;
+          
+          li {
+            display: flex;
+            list-style: none;
+            padding-top: 40px;
+            a {
+              display: block;
+              font-weight: bold;
+              text-decoration: none;
+              color: white;
+              font-size: 30px;
+            }
+          }
+        } 
+        &-brand {
+          position: absolute;
+          bottom: 30px;
+          img{
+            width: 100px;
+            display: block;
+          }
+        }
+        &::before {
+          
+          position: absolute;
+          left: -1000px;
+          content: '';
+          width: 300%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+        }
+      }
+
+    }
+  }
+}
+
+
 

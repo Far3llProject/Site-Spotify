@@ -1,0 +1,109 @@
+// TODO colocar em coluna em tamanho menor
+
+.footer {
+  width: 100%;
+  height: 530px;
+  background: black;
+
+  &__brand {
+    padding-top: 15px;
+    width: 130px;
+    display: block;
+    
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__menu {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    justify-content: space-between;
+    display: flex;
+    background:black;
+
+    &-link {
+      padding-left: 15px;
+      display: flex;
+      
+      ul {
+        list-style: none;
+
+        p {
+          color: #616467;
+          font-weight: bold;
+          font-size: 12px;
+        }
+
+        li {
+          padding-top: 30px;
+
+          a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            letter-spacing: 1px;
+
+            &:hover {
+              color: greenyellow;
+            }
+          }
+        }
+      }
+
+      &-socials {
+        display: flex;
+        padding-top: 15px;
+        padding-left: 160px;
+        z-index: 0;
+        
+        &-item {
+          position: relative;
+
+          &-image{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #666666;
+            border-radius: 500rem;
+
+            img {
+              display: block;
+              width: 25px;
+              height: 25px;
+              z-index: 1000;
+
+              &:hover {
+                filter: 
+                invert(62%)
+                sepia(48%) 
+                saturate(5157%) 
+                hue-rotate(104deg) 
+                brightness(101%) 
+                contrast(77%);
+              }
+            }
+          }
+
+          & + & {
+            padding-left: 20px;
+          } 
+        } 
+
+        &-hide {
+          opacity: 0;
+        }
+      }
+    }
+
+  } 
+}
+
+@media  (max-width: 1000px) {
+  .footer__menu-link-socials {
+    display: block;
+  }
+}
