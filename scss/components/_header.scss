@@ -92,7 +92,6 @@
           position: absolute;
           background: white;
           top: -7px;
-          -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
           right: 12px;
         }
@@ -124,7 +123,7 @@
       }
     }
   }
-
+  // Animação da seta
   &__active {
     .header__menu-item--with-arrow::after {
       transform: rotate(90deg);

@@ -1,38 +1,36 @@
 .header__menu-hidden {
+  padding-top: 25px;
   opacity: 0;
   z-index: -1;
   position: absolute;
-  display: flex;
-  width: 40%;
-  height: 105vh;
+  width: 40vh;
+  height: 115vh;
   background: $headerColorSmall;
   right: -400px;
   transition: 0.3s;
+  flex-direction: column;
 
-  ul {
-    position: relative;
-    padding-top: 30px;
+  &-list {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 41vh;
+    margin-bottom: 150px;
+    margin-top: 70px;
+    color: black;
     
-    li {
-      display: flex;
-      list-style: none;
-      padding-top: 40px;
-
-      a {
-        display: block;
-        font-weight: bold;
-        text-decoration: none;
-        color: rgb(192, 9, 9);
-        font-size: 30px;
-      }
+    &-item {
+      margin-left: 25px;
+      display: block;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+      font-size: 30px;
     }
-  } 
+  }
 
   &-brand {
-    position: absolute;
-    bottom: 55px;
+    margin-bottom: 40px;
 
     img {
       width: 100px;
@@ -42,10 +40,12 @@
 
   &::before {
     content: '';
-    position: absolute;
-    left: 600px;
-    width: 200%;
-    height: 100%;
+    position: fixed;
+    display: none;
+    z-index: -1;
+    left: -547px;
+    width: 100em;
+    height: 100em;
     background: rgba(0, 0, 0, 0.5);
   }
 
