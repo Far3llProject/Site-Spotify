@@ -1,59 +1,203 @@
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="scss/style.css">
   <title>Spotify</title>
+  <script src="./js/active.js" ></script>
 </head>
-
-<header class="header">
+<!-- TODO Remover o ID e usar DATASET -->
+<!-- TODO Remover todas as ul e passar tag NAV -->
+<header id="header" class="header" data-toggle="color">
   <div class="container">
     <a href="#" class="header__brand"><img src="img/Spotify_Logo_.png"></a>
     <nav class="header__menu">
       <a class="header__menu-item" href="#">Premium</a>
       <a class="header__menu-item" href="#">Ajuda</a>
       <a class="header__menu-item" href="#">Baixar</a>
-      <button class="header__menu-item header__menu-item--with-button">
+      <button onclick="Perfil()" class="header__menu-item header__menu-item--with-button">
         <img class="header__menu-image" src="img/bit-face.png">
         <div class="header__menu-item header__menu-item--with-arrow">Perfil</div>
-
+        <div id="menu" class="menu__button">
+          <ul>
+            <li><a href="#">Conta</a></li>
+            <li><a href="#">Sair</a></li>
+          </ul>      
+        </div>
       </button>
     </nav>
+    <div class="header__toggle" onclick="toggle()">
+      <img class="header__toggle-image" src="img/bit-face.png">
+    </div>
   </div>
+    <nav class="header__menu-hidden">
+      <div class="container container-menu">
+        <div class="header__menu-hidden-list">
+          <a class="header__menu-hidden-list-item" href="#">Premium</a>
+          <a class="header__menu-hidden-list-item" href="#">Ajuda</a>
+          <a class="header__menu-hidden-list-item" href="#">baixar</a>
+          <span class="header__menu-hidden-list-div"></span>
+          <a class="header__menu-hidden-list-item" href="#">conta</a>
+          <a class="header__menu-hidden-list-item" href="#">sair</a>
+        </div>
+        <a class="header__menu-hidden-brand" href="#">
+          <img src="img/Spotify_Logo_.png">
+        </a>
+      </div>
+    </nav>
 </header>
 
-<body>  
-  <!-- <div class="covid">
-    <h3>Apoio à música em tempos de COVID-19</h3>
-    <p> Junte-se a nós para ajudar a comunidade musical global a enfrentar essa crise sem precedentes.
-    <a href="">Saiba mais</a></p>
-  </div>
-  <div class="spotify_premium">
-    <div class="spotify_premium__content">
-      <img src="" alt="">
+<body id="body"> 
+  <div class="container">
+    <div class="covid">
+      <section>
+        <h2>Apoio à música em tempos de COVID-19</h2>
+        <p>Junte-se a nós para ajudar a comunidade musical global a enfrentar essa crise sem precedentes. 
+          <a href="#">Saiba mais</a>
+        </p>
+      </section>
     </div>
   </div>
-  <div class="album">
-    <div class="album__webplayer">
+
+  <div class="premium">
+    <section class="premium__content">
+      <h1>Vá de Premium. E seja feliz!</h1>
+      <button class="premium__content--with-button">obter spotify premium</button>
+    </section>
+    <section class="premium__content--terms">
+      <a href="#">* Sujeito a termos e condições.</a>
+    </section>
+  </div>
+
+  <div class="container">
+    <section class="web-player">
+      <h1>É música que você quer?</h1>
+      <p>Continue curtindo suas favoritas de onde parou.</p>
+      <button class="web-player__button">ABRIR O WEB PLAYER</button>
+    </section>
+
+    <div class="albums">
+      <div class="albums__item"> 
+        <img src="./img/music-album-cover-design-template.jpg">
+        <div class="albums__item-info">
+          <h3>Nome do Album</h3>
+          <h6>ARTISTA</h6>
+          <p>ESCUTE AGORA</p>
+        </div>
+      </div>
+      <div class="albums__item"> 
+        <img src="./img/music-album-cover-design-template.jpg">
+        <div class="albums__item-info">
+          <h3>Nome do Album</h3>
+          <h6>ARTISTA</h6>
+          <p>ESCUTE AGORA</p>
+        </div>
+      </div>
+      <div class="albums__item"> 
+        <img src="./img/music-album-cover-design-template.jpg">
+        <div class="albums__item-info">
+          <h3>Nome do Album</h3>
+          <h6>ARTISTA</h6>
+          <p>ESCUTE AGORA</p>
+        </div>
+      </div>
+      <div class="albums__item"> 
+        <img src="./img/music-album-cover-design-template.jpg">
+        <div class="albums__item-info">
+          <h3>Nome do Album</h3>
+          <h6>ARTISTA</h6>
+          <p>ESCUTE AGORA</p>
+        </div>
+      </div>
+      <div class="albums__item"> 
+        <img src="./img/music-album-cover-design-template.jpg">
+        <div class="albums__item-info">
+          <h3>Nome do Album</h3>
+          <h6>ARTISTA</h6>
+          <p>ESCUTE AGORA</p>
+        </div>
+      </div>
+      <div  class="albums__item"> 
+        <img src="./img/music-album-cover-design-template.jpg">
+        <div class="albums__item-info">
+          <h3>Nome do Album</h3>
+          <h6>ARTISTA</h6>
+          <p>ESCUTE AGORA</p>
+        </div>
+      </div>
     </div>
-    <div class="album__folks">
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+
+    <div class="albums albums-sm">
+      <div  class="albums__item"> 
+        <img src="./img/music-album-cover-design-template.jpg">
+        <div class="albums__item-info">
+          <h3>Nome do Album</h3>
+          <h6>ARTISTA</h6>
+          <p>ESCUTE AGORA</p>
+        </div>
+      </div>
+      <div class="albums__item"> 
+        <img src="./img/music-album-cover-design-template.jpg">
+        <div class="albums__item-info">
+          <h3>Nome do Album</h3>
+          <h6>ARTISTA</h6>
+          <p>ESCUTE AGORA</p>
+        </div>
+      </div>
     </div>
-  </div> -->
+  </div>
 </body>
-<footer>
-  <nav>
-    <div class="LOGO"></div>
-    <div class="EMPRESA"></div>
-    <div class="comunidade"></div>
-    <div class="links úteis"></div>
-    <divv class="sociais"></div>
-  </nav>
+
+<footer class="footer">
+  <div class="container">
+    <nav class="footer__menu">
+      <a href="#" class="footer__brand"><img src="img/Spotify_Logo_.png"></a>
+        <!-- TODO passar de lista para nav -->
+      <div class="footer__menu-link">
+        <ul>
+          <p>EMPRESA</p>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Empregos</a></li>
+          <li><a href="#">For the Record</a></li>
+        </ul>    
+      </div>
+      <div class="footer__menu-link">
+        <ul>
+          <p>COMUNIDADE</p>
+          <li><a href="#">Para Artistas</a></li>
+          <li><a href="#">Desenvolvedores</a></li>
+          <li><a href="#">Marcas</a></li>
+          <li><a href="#">Investidores</a></li>
+          <li><a href="#">Fornecedores</a></li>
+        </ul>    
+      </div>
+      <div class="footer__menu-link">
+        <ul>
+          <p>LINKS ÚTEIS</p>
+          <li><a href="#">Ajuda</a></li>
+          <li><a href="#">Player da Web</a></li>
+          <li><a href="#">Aplicativo móvel grátis</a></li>
+        </ul>    
+      </div>
+      <!-- TODO Encurtar nomes das clases -->
+      <nav id="socials" class="footer__menu-socials">
+        <a class="footer__menu-socials-item" href="#">
+          <div class="footer__menu-socials-item-image">
+            <img src="./img/instagram.svg">
+          </div>
+        </a>
+        <a class="footer__menu-socials-item" href="#">
+          <div class="footer__menu-socials-item-image">
+            <img src="./img/twitter.svg">
+          </div>
+        </a>
+        <a class="footer__menu-socials-item" href="#">
+          <div class="footer__menu-socials-item-image">
+            <img src="./img/facebook.svg">
+          </div>
+        </a>
+      </nav>
+    </nav>
+  </div>
 </footer>
 </html>

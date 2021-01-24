@@ -1,0 +1,210 @@
+@media (max-width: 1000px) {
+  .header {
+    background: $headerColorSmall;
+    &__menu {
+      &-item {
+        display: none;
+      }
+    }
+
+    &__toggle {
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        z-index: 1;
+        transition: 0.5s;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 4px;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        z-index: 1;
+        box-shadow: 0 10px 0 #fff;
+        transition: 0.5s;
+      }
+      
+      &-image {
+        border-radius: 500rem;
+        display: flex;
+        width: 28px;
+        position: absolute;
+        left: -37px;
+      }
+    }
+  
+    &__active {
+      .container-menu {
+        height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+       
+      .header__toggle::before {
+        top: 14px;
+        transform: rotate(-45deg);
+        box-shadow: 0 0 0 #fff;
+      }
+
+      .header__toggle::after {
+        top: 14px;
+        transform: rotate(45deg);
+      }
+
+      .header__menu-hidden {
+        padding-top: 25px;
+        opacity: 1;
+        z-index: -1;
+        position: absolute;
+        width: 40vh;
+        height: 115vh;
+        background: $headerColorSmall;
+        right: -1px;
+        transition: 0.5s;
+    
+        &-brand {
+          position: absolute;
+          bottom: 21vh;
+          padding-left: 26px;
+
+          img {
+            width: 100px;
+            display: block;
+          }
+        }
+
+        &::before {
+          content: '';
+          position: fixed;
+          z-index: -1;
+          display: flex;
+          width: 100em;
+          height: 100em;
+          background: rgba(0, 0, 0, 0.5);
+        }
+
+        &-list-div {
+          position: relative;
+          left: 25px;
+          top: -32px;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 35px;
+            width: 35px;
+            height: 2px;
+            background: white;
+          }
+        }
+      }
+    }
+  }   
+}
+
+
+@media (max-width: 720px) {
+  .header__active {
+    .header__menu-hidden {
+      padding-top: 25px;
+      opacity: 1;
+      z-index: -1;
+      position: absolute;
+      width: 101%;
+      height: 112vh;
+      background: black;
+      right: -1px;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .covid {
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header__active {
+    .container-menu {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  
+    .header__menu-hidden {
+      padding-top: 25px;
+      opacity: 1;
+      z-index: 0;
+      position: fixed;
+      justify-content: center;
+      display: flex;
+      width: 60vh;
+      height: 122vh;
+      background: black;
+      right: -1px;
+      transition: 0.5s;
+      
+      &-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 41vh;
+        margin-bottom: 0;
+        margin-top: 0;
+        color: black;
+      }
+      
+      &-brand {
+        margin-bottom: 65px;
+  
+        img {
+          width: 100px;
+          display: block;
+        }
+      }
+  
+      &::before {
+        content: '';
+        position: fixed;
+        z-index: -1;
+        width: 100em;
+        height: 132vh;
+        background: rgba(0, 0, 0, 0.5);
+      }
+  
+      &-list-div {
+        position: relative;
+        left: 25px;
+        top: -32px;
+  
+        &::after {
+          content: '';
+          position: absolute;
+          top: 35px;
+          width: 35px;
+          height: 2px;
+          background: white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.header__menu-hidden {
+  padding-top: 25px;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  width: 40vh;
+  height: 115vh;
+  background: $headerColorSmall;
+  right: -400px;
+  transition: 0.3s;
+  flex-direction: column;
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 41vh;
+    margin-bottom: 150px;
+    margin-top: 70px;
+    color: black;
+    
+    &-item {
+      margin-left: 25px;
+      display: block;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+      font-size: 30px;
+    }
+  }
+
+  &-brand {
+    margin-bottom: 40px;
+
+    img {
+      width: 100px;
+      display: block;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: fixed;
+    display: none;
+    z-index: -1;
+    left: -547px;
+    width: 100em;
+    height: 100em;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  &-div {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 35px;
+      width: 20px;
+      height: 2px;
+      background: white;
+    }
+  }
+}
